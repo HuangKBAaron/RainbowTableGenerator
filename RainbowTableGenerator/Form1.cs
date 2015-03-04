@@ -60,7 +60,7 @@ namespace RainbowTableGenerator
             // char[] allowedAlphabet = new char[] { 'a', 'b', 'c'};
             // char[] allowedAlphabet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-            char[] allowedAlphabet = @"aåáàâäbcç¢deéèêëfghiïjklmnñoœóôöpqrsßtuûüvwxyzAÅÁÀÂÄBCÇ¢DEÉÈÊËFGHIÏJKLMNÑOŒÓÔÖPQRSTUÛÜVWXYZ#=+-_*°§%@¦|&!?.:;~^()[]{}<>\/€$£¬'`´""".ToCharArray();
+            char[] allowedAlphabet = @"aåáàâäbcç¢deéèêëfghiïjklmnñoœóôöpqrsßtuûüvwxyzAÅÁÀÂÄBCÇ¢DEÉÈÊËFGHIÏJKLMNÑOŒÓÔÖPQRSTUÛÜVWXYZ #=+-_*°§%@¦|&!?.:;~^()[]{}<>\/€$£¬'`´""".ToCharArray();
 
             // Add reference to System.Numerics.dll
             System.Numerics.BigInteger numChars = allowedAlphabet.LongLength;
