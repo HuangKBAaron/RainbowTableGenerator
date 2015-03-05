@@ -68,6 +68,11 @@ namespace RainbowTableGenerator
             // int nm = (int)System.Math.Pow(numChars, digits);
             System.Numerics.BigInteger nm = System.Numerics.BigInteger.Pow(numChars, digits);
 
+            // System.Threading.Tasks.Parallel.For()
+
+            System.Console.WriteLine(System.Environment.ProcessorCount);
+
+
             System.Data.DataRow dr = null;
             for (System.Numerics.BigInteger i = 0; i < nm; ++i)
             {
