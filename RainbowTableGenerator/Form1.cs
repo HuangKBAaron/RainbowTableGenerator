@@ -14,7 +14,7 @@ namespace RainbowTableGenerator
         {
             InitializeComponent();
             NativeMethods.SetPlaceHolderText(this.txtNumDigits, "Num Digits");
-        }
+        } // End Constructor
 
 
         private void btnPermute_Click(object sender, System.EventArgs e)
@@ -24,7 +24,7 @@ namespace RainbowTableGenerator
                 digits = 2;
 
             this.dgvDisplayData.DataSource = Permute(digits);
-        }
+        } // End Sub btnPermute_Click 
 
 
         public static string MD5(string input, System.Text.Encoding enc)
@@ -39,9 +39,10 @@ namespace RainbowTableGenerator
             for (int i = 0; i < hash.Length; i++)
             {
                 sb.Append(hash[i].ToString("X2"));
-            }
+            } // Next i 
+
             return sb.ToString();
-        }
+        } // End Function MD5
 
 
         public System.Data.DataTable Permute(int digits)
@@ -114,7 +115,7 @@ namespace RainbowTableGenerator
         } // End Function Permute
 
 
-    }
+    } // End Class Form1 : Form
 
 
-}
+} // End Namespace RainbowTableGenerator
