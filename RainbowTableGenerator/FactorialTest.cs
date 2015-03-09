@@ -7,6 +7,7 @@ using System.Numerics;
 namespace RainbowTableGenerator
 {
 
+
     // http://stackoverflow.com/questions/18911262/parallel-calculation-of-biginteger-factorial
     // https://msdn.microsoft.com/en-us/magazine/cc163340.aspx
     // http://tipsandtricks.runicsoft.com/CSharp/ParallelClass.html
@@ -22,9 +23,10 @@ namespace RainbowTableGenerator
             {
                 res *= x;
                 x--;
-            }
+            } // End while (x > 1)
+
             return res;
-        }
+        } // End Function SingleFactorial
 
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace RainbowTableGenerator
             {
                 Task<BigInteger> tsk = Task.Factory.StartNew(() => Multiply(x, i), TaskCreationOptions.LongRunning);
                 ls.Add(tsk);
-            }
+            } // Next i 
 
             Task.WaitAll(ls.ToArray());
 
@@ -50,11 +52,10 @@ namespace RainbowTableGenerator
             for (int i = 0; i < ls.Count; ++i)
             {
                 finalResult *= ls[i].Result;
-            }
+            } // Next i
 
             return finalResult;
-        }
-
+        } // End Function ParallelFactorial2
 
 
         public static BigInteger ParallelFactorial(long x)
@@ -67,10 +68,8 @@ namespace RainbowTableGenerator
                             .ToArray();
 
 
-
-
-                // after all tasks are done...
-                Task.WaitAll(parallelTasks);
+            // after all tasks are done...
+            Task.WaitAll(parallelTasks);
 
             // ... take the partial results and multiply them together
             BigInteger finalResult = 1;
@@ -78,10 +77,10 @@ namespace RainbowTableGenerator
             foreach (var partialResult in parallelTasks.Select(t => t.Result))
             {
                 finalResult *= partialResult;
-            }
+            } // Next partialResult 
 
             return finalResult;
-        }
+        } // End Function ParallelFactorial
 
 
         /// <summary>
@@ -99,10 +98,10 @@ namespace RainbowTableGenerator
                 result *= i;
 
             return result;
-        }
+        } // End Function Multiply
 
 
-    }
+    } // End Class FactorialTest
 
 
-}
+} // End Namespace RainbowTableGenerator
